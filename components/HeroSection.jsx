@@ -2,7 +2,6 @@
 
 import '@ant-design/v5-patch-for-react-19';
 import { Card, Button, Space, Typography, Input, Form, message } from 'antd';
-import { HeartFilled } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Logo from './Logo';
@@ -72,6 +71,7 @@ export default function HeroSection() {
           }}
         >
           <Space direction="vertical" size="large" style={{ width: '100%' }}>
+            {/* Replace the heart with the logo */}
             <motion.div
               initial={{ scale: 0 }}
               animate={{ 
@@ -85,36 +85,11 @@ export default function HeroSection() {
               }}
               whileHover={{ 
                 scale: 1.1,
-                rotate: [0, -10, 10, -10, 0],
                 transition: { duration: 0.5 }
               }}
               whileTap={{ scale: 0.9 }}
             >
-              <HeartFilled
-                style={{
-                  fontSize: '72px',
-                  color: '#FF1493',
-                  filter: 'drop-shadow(0 4px 8px rgba(255, 20, 147, 0.3))'
-                }}
-                // Heart beating animation
-                animate={{
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-              />
-            </motion.div>
-
-            {/* Add the Logo component here */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <Logo width={250} height={80} />
+              <Logo width={150} height={150} />
             </motion.div>
 
             <motion.div
