@@ -1,38 +1,56 @@
 'use client';
 
 import '@ant-design/v5-patch-for-react-19';
-import { Card, Button, Space, Typography, Input } from 'antd';
+import { Card, Button, Space, Typography, Input, Form, message } from 'antd';
 import { HeartFilled } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const { Title, Text } = Typography;
-const { InputGroup } = Input;
 
 export default function HeroSection() {
   const [email, setEmail] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleNotifyClick = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     if (!email) {
-      alert('Please enter your email address');
+      message.error('Please enter your email address');
       return;
     }
     
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address');
+      message.error('Please enter a valid email address');
       return;
     }
     
-    // In a real application, you would send this to your backend
-    // For now, we'll just show an alert with the email
-    alert(`Thank you for your interest! We'll notify ${email} when HoneyDate.club goes live. A reference copy has been sent to founder@honeydate.club`);
+    setLoading(true);
     
-    // Reset form
-    setEmail('');
-    setIsSubmitted(true);
+    try {
+      // Submit to Formspree
+      const response = await fetch('https://formspree.io/f/xvgwyooq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+      
+      if (response.ok) {
+        setIsSubmitted(true);
+        message.success('Thank you! We\'ll notify you when we launch.');
+      } else {
+        message.error('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      message.error('Network error. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -159,17 +177,19 @@ export default function HeroSection() {
                       }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <Input
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        style={{
-                          maxWidth: '300px',
-                          margin: '0 auto 16px',
-                          padding: '12px',
-                          borderRadius: '50px',
-                        }}
-                      />
+                      <Form onSubmit={handleSubmit}>
+                        <Input
+                          placeholder="Enter your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          style={{
+                            maxWidth: '300px',
+                            margin: '0 auto 16px',
+                            padding: '12px',
+                            borderRadius: '50px',
+                          }}
+                        />
+                      </Form>
                     </motion.div>
                   </motion.div>
                   <motion.div
@@ -185,7 +205,8 @@ export default function HeroSection() {
                     <Button
                       type="primary"
                       size="large"
-                      onClick={handleNotifyClick}
+                      onClick={handleSubmit}
+                      loading={loading}
                       style={{
                         height: 'auto',
                         padding: '12px 40px',
@@ -226,7 +247,7 @@ export default function HeroSection() {
                       fontSize: '1.1rem',
                       color: '#5A3A31',
                       fontWeight: 500,
-                  display: 'block'
+                      display: 'block'
                     }}
                   >
                     Thank you! We'll notify you at {email} when we launch.
