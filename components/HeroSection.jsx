@@ -5,6 +5,7 @@ import { Card, Button, Space, Typography, Input, Form, message } from 'antd';
 import { HeartFilled } from '@ant-design/icons';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Logo from './Logo';
 
 const { Title, Text } = Typography;
 
@@ -105,6 +106,15 @@ export default function HeroSection() {
                   repeatType: "reverse",
                 }}
               />
+            </motion.div>
+
+            {/* Add the Logo component here */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <Logo width={250} height={80} />
             </motion.div>
 
             <motion.div
