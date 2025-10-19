@@ -8,36 +8,48 @@ import Logo from './Logo';
 
 const { Text } = Typography;
 
-export default function HeroSection() {
-  const floatingHearts = Array.from({ length: 8 });
+// Predefined heart positions and sizes to avoid random values that cause hydration issues
+// Using fixed values for both initial and animate properties to ensure SSR/CSR consistency
+const HEART_CONFIGURATIONS = [
+  { initialX: 15, animateX: 25, size: 18, delay: 0, duration: 10 },
+  { initialX: 85, animateX: 75, size: 22, delay: 1.5, duration: 11 },
+  { initialX: 30, animateX: 40, size: 15, delay: 3, duration: 9 },
+  { initialX: 70, animateX: 60, size: 20, delay: 4.5, duration: 12 },
+  { initialX: 10, animateX: 20, size: 16, delay: 6, duration: 10 },
+  { initialX: 90, animateX: 80, size: 19, delay: 7.5, duration: 8 },
+  { initialX: 45, animateX: 55, size: 17, delay: 9, duration: 11 },
+  { initialX: 55, animateX: 45, size: 21, delay: 10.5, duration: 9 }
+];
 
+export default function HeroSection() {
   return (
     <div className="relative flex items-center justify-center min-h-screen p-4 overflow-hidden">
-      {floatingHearts.map((_, index) => (
+      {HEART_CONFIGURATIONS.map((config, index) => (
         <motion.div
           key={index}
           initial={{
             opacity: 0,
             y: '100vh',
-            x: `${Math.random() * 100}vw`,
+            x: `${config.initialX}vw`,
           }}
           animate={{
             opacity: [0, 0.6, 0],
             y: '-20vh',
-            x: `${Math.random() * 100}vw`,
+            x: `${config.animateX}vw`,
           }}
           transition={{
-            duration: 8 + Math.random() * 4,
+            duration: config.duration,
             repeat: Infinity,
-            delay: index * 1.5,
+            delay: config.delay,
             ease: 'easeInOut',
           }}
           style={{
             position: 'absolute',
-            fontSize: `${20 + Math.random() * 20}px`,
+            fontSize: `${config.size}px`,
             color: '#FFFFFFaa',
             pointerEvents: 'none',
           }}
+          className="sm:text-sm md:text-base"
         >
           <HeartOutlined />
         </motion.div>
@@ -55,7 +67,7 @@ export default function HeroSection() {
           style={{
             textAlign: 'center',
             borderRadius: '24px',
-            padding: '32px 24px',
+            padding: '24px 16px',
             border: '2px solid rgba(255, 255, 255, 0.3)',
           }}
         >
@@ -79,7 +91,7 @@ export default function HeroSection() {
                 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Logo width={200} height={200} />
+                <Logo width={120} height={120} className="sm:w-40 sm:h-40" />
               </motion.div>
             </div>
 
@@ -90,7 +102,7 @@ export default function HeroSection() {
             >
               <Text
                 style={{
-                  fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                  fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
                   color: '#5A3A31',
                   fontWeight: 700,
                   lineHeight: '1.3',
@@ -113,7 +125,7 @@ export default function HeroSection() {
               >
                 <Text
                   style={{
-                    fontSize: 'clamp(1rem, 2.5vw, 1.2rem)',
+                    fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)',
                     color: '#8B6B61',
                     fontWeight: 500,
                     marginTop: '8px',
@@ -130,7 +142,8 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 0.6 }}
-              style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', justifyContent: 'center' }}
+              style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}
+              className="flex-col sm:flex-row"
             >
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -148,8 +161,8 @@ export default function HeroSection() {
                   icon={<CalendarOutlined />}
                   style={{
                     height: 'auto',
-                    padding: '14px 32px',
-                    fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
+                    padding: '12px 24px',
+                    fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                     borderRadius: '50px',
                     background: 'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)',
                     border: 'none',
@@ -176,8 +189,8 @@ export default function HeroSection() {
                   icon={<CoffeeOutlined />}
                   style={{
                     height: 'auto',
-                    padding: '14px 32px',
-                    fontSize: 'clamp(1rem, 2.5vw, 1.15rem)',
+                    padding: '12px 24px',
+                    fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                     borderRadius: '50px',
                     background: 'transparent',
                     border: '2px solid #FF1493',
@@ -196,7 +209,7 @@ export default function HeroSection() {
               transition={{ delay: 1.4, duration: 0.6 }}
               style={{
                 display: 'flex',
-                gap: '24px',
+                gap: '16px',
                 justifyContent: 'center',
                 flexWrap: 'wrap',
                 marginTop: '8px',
@@ -218,17 +231,34 @@ export default function HeroSection() {
                     alignItems: 'center',
                     gap: '6px',
                     color: '#5A3A31',
-                    fontSize: '0.95rem',
+                    fontSize: '0.85rem',
                     fontWeight: 500,
                   }}
+                  className="text-xs sm:text-sm"
                 >
-                  <span style={{ color: '#FF1493', fontSize: '1.2rem' }}>{item.icon}</span>
+                  <span style={{ color: '#FF1493', fontSize: '1rem' }} className="text-lg">{item.icon}</span>
                   <span>{item.text}</span>
                 </motion.div>
               ))}
             </motion.div>
           </Space>
         </Card>
+
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 hidden sm:block"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 0.5 }}
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className="text-pink-200 text-lg"
+          >
+            ↓
+          </motion.div>
+        </motion.div>
       </motion.div>
     </div>
   );

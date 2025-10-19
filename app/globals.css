@@ -6,22 +6,40 @@
   box-sizing: border-box;
 }
 
+/* Ensure proper width containment */
+.w-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
 html,
 body {
   min-height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body {
   background: linear-gradient(135deg, #FFB6C1 0%, #FF7F89 40%, #FFDAB9 100%);
   background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 #__next {
   height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
+/* Enhanced glassmorphism effect */
 .glassmorphism {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(10px);
@@ -30,14 +48,211 @@ body {
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
+/* Hero card styling */
 .hero-card {
   min-height: auto;
   max-width: 600px;
   width: 90%;
 }
 
+/* Wix-style decorative elements */
+.decorative-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  z-index: -1;
+}
+
+.decorative-circle-1 {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 5%;
+}
+
+.decorative-circle-2 {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  right: 10%;
+}
+
+.decorative-circle-3 {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  right: 20%;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #FF1493, #FF69B4, #FFB6C1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section transitions */
+.section-transition {
+  transition: all 0.5s ease;
+}
+
+/* Enhanced button effects */
+.btn-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.btn-hover-effect:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Parallax effect for background elements */
+.parallax-element {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Image container with fallback */
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  display: none;
+}
+
+.image-container img:not([src*=".jpg"]) + .fallback-content,
+.image-container img:not([src*=".jpeg"]) + .fallback-content,
+.image-container img:not([src*=".png"]) + .fallback-content {
+  display: flex;
+}
+
+.image-container img[alt]:not([src*=".jpg"]):not([src*=".jpeg"]):not([src*=".png"]) + .fallback-content {
+  display: flex;
+}
+
+/* Fallback content styling */
+.fallback-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero-card {
     width: 95%;
+  }
+  
+  .decorative-circle {
+    display: none;
+  }
+}
+
+/* Fix for horizontal scrolling containers */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Ensure proper container sizing */
+.min-w-max {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+}
+
+.w-full {
+  width: 100%;
+  max-width: 100%;
+}
+
+.max-w-full {
+  max-width: 100%;
+}
+
+/* Ensure proper layout on desktop */
+@media (min-width: 768px) {
+  .max-w-6xl {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .max-w-5xl {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure all section containers have proper width constraints */
+section {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure gallery cards don't cause overflow */
+.w-64 {
+  width: 100%;
+  max-width: 250px;
+}
+
+/* Ensure AntdRegistry container doesn't cause overflow */
+.AntdRegistry {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .w-64 {
+    max-width: calc(100vw - 2rem);
+  }
+  
+  .w-max {
+    max-width: 100vw;
   }
 }
