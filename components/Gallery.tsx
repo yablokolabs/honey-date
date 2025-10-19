@@ -5,8 +5,23 @@ import { Card, Typography } from 'antd';
 
 const { Text } = Typography;
 
+// Define type for gallery items
+interface GalleryItem {
+  title: string;
+  description: string;
+  gradient: string;
+  image: string;
+}
+
+// Define type for feature items
+interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 // Updated gallery items with more couple-focused content
-const galleryItems = [
+const galleryItems: GalleryItem[] = [
   {
     title: 'Speed-Date Fridays',
     description: 'Meet 10+ singles in one night',
@@ -73,7 +88,7 @@ export default function Gallery() {
         {/* Responsive gallery - horizontal scroll on mobile, grid on desktop */}
         <div className="overflow-x-auto pb-4 scrollbar-hide md:overflow-visible md:pb-0 w-full max-w-full">
           <div className="flex gap-4 sm:gap-6 px-2 sm:px-4 md:hidden w-max">
-            {galleryItems.map((item, index) => (
+            {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: 50 }}
@@ -149,7 +164,7 @@ export default function Gallery() {
           
           {/* Grid layout for desktop */}
           <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.map((item, index) => (
+            {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -245,7 +260,7 @@ export default function Gallery() {
               description: "Carefully designed spaces for intimate conversations",
               icon: "🌹"
             }
-          ].map((item, index) => (
+          ].map((item: FeatureItem, index: number) => (
             <motion.div
               key={index}
               whileHover={{ y: -10 }}

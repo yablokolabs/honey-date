@@ -9,7 +9,7 @@ const { Text, Title } = Typography;
 const { Search } = Input;
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState<string>('');
 
   const handleSubscribe = () => {
     if (email) {
@@ -130,7 +130,7 @@ export default function Footer() {
               <Input
                 placeholder="Your email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                 className="rounded-full h-12"
                 style={{ padding: '0 16px' }}
               />

@@ -1,7 +1,8 @@
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import './globals.css';
+import { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Honey Date 💞 - Coming Soon',
   description: 'Where Love Meets Over Coffee & Cocktails. Weekly speed-dating events for working singles in Bangalore.',
   icons: {
@@ -29,7 +30,11 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>

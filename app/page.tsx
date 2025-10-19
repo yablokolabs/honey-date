@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState<string>('home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,12 +34,12 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       window.scrollTo({
         top: element.offsetTop,
-        behavior: 'smooth'
+        behavior: 'smooth' as ScrollBehavior
       });
     }
   };

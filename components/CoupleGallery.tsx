@@ -2,6 +2,13 @@
 
 import { motion } from 'framer-motion';
 
+// Define type for feature items
+interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 const CoupleGallery = () => {
   return (
     <section className="py-16 px-4">
@@ -78,7 +85,7 @@ const CoupleGallery = () => {
               description: "Countless couples have found love through our events",
               icon: "💑"
             }
-          ].map((item, index) => (
+          ].map((item: FeatureItem, index: number) => (
             <motion.div
               key={index}
               whileHover={{ y: -10 }}

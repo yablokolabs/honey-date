@@ -3,11 +3,26 @@
 import { motion } from 'framer-motion';
 import { Card, Typography, Steps } from 'antd';
 import { HeartOutlined, UserAddOutlined, CoffeeOutlined, SmileOutlined } from '@ant-design/icons';
+import React from 'react';
 
 const { Title, Text } = Typography;
 
+// Define type for step items
+interface StepItem {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+}
+
+// Define type for feature items
+interface FeatureItem {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export default function EventInfo() {
-  const steps = [
+  const steps: StepItem[] = [
     {
       title: 'Enroll',
       description: 'Register online or walk-in',
@@ -148,7 +163,7 @@ export default function EventInfo() {
             }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-              {steps.map((step, index) => (
+              {steps.map((step: StepItem, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -204,7 +219,7 @@ export default function EventInfo() {
                 description: "Carefully designed spaces for intimate conversations",
                 icon: "🌹"
               }
-            ].map((item, index) => (
+            ].map((item: FeatureItem, index: number) => (
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}

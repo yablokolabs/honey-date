@@ -8,9 +8,18 @@ import Logo from './Logo';
 
 const { Text } = Typography;
 
+// Define type for heart configurations
+interface HeartConfig {
+  initialX: number;
+  animateX: number;
+  size: number;
+  delay: number;
+  duration: number;
+}
+
 // Predefined heart positions and sizes to avoid random values that cause hydration issues
 // Using fixed values for both initial and animate properties to ensure SSR/CSR consistency
-const HEART_CONFIGURATIONS = [
+const HEART_CONFIGURATIONS: HeartConfig[] = [
   { initialX: 15, animateX: 25, size: 18, delay: 0, duration: 10 },
   { initialX: 85, animateX: 75, size: 22, delay: 1.5, duration: 11 },
   { initialX: 30, animateX: 40, size: 15, delay: 3, duration: 9 },
@@ -20,6 +29,12 @@ const HEART_CONFIGURATIONS = [
   { initialX: 45, animateX: 55, size: 17, delay: 9, duration: 11 },
   { initialX: 55, animateX: 45, size: 21, delay: 10.5, duration: 9 }
 ];
+
+// Define type for feature items
+interface FeatureItem {
+  icon: React.ReactNode;
+  text: string;
+}
 
 export default function HeroSection() {
   return (
@@ -210,7 +225,7 @@ export default function HeroSection() {
             { icon: <HeartOutlined />, text: 'Free Cocktails' },
             { icon: <CalendarOutlined />, text: 'Every Fri & Sat' },
             { icon: <CoffeeOutlined />, text: 'Instant Dates' },
-          ].map((item, index) => (
+          ].map((item: FeatureItem, index: number) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 10 }}
