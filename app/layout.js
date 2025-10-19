@@ -34,6 +34,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        {/* Cloudflare Web Analytics */}
+        <script 
+          defer 
+          src='https://static.cloudflareinsights.com/beacon.min.js' 
+          data-cf-beacon='{"token": "0251c16921864eec94293fbd4a78d00b"}'
+        ></script>
+        {/* End Cloudflare Web Analytics */}
       </head>
       <body>
         <AntdRegistry>{children}</AntdRegistry>
