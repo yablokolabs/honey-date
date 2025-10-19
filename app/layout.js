@@ -4,12 +4,15 @@ import './globals.css';
 export const metadata = {
   title: 'Honey Date 💞 - Coming Soon',
   description: 'Where Love Meets Over Coffee & Cocktails. Weekly speed-dating events for working singles in Bangalore.',
+  icons: {
+    icon: '/logo.svg',
+  },
   openGraph: {
     title: 'Honey Date 💞 - Coming Soon',
     description: 'Where Love Meets Over Coffee & Cocktails. Weekly speed-dating events for working singles in Bangalore.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/logo.svg',
         width: 1200,
         height: 630,
         alt: 'HoneyDate.club'
@@ -29,6 +32,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+      </head>
       <body>
         <AntdRegistry>{children}</AntdRegistry>
       </body>

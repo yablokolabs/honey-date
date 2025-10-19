@@ -71,52 +71,33 @@ export default function HeroSection() {
           }}
         >
           <Space direction="vertical" size="large" style={{ width: '100%' }}>
-            {/* Replace the heart with the logo */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ 
-                scale: 1,
-                transition: {
-                  delay: 0.3,
-                  duration: 0.5,
-                  type: 'spring',
-                  stiffness: 200
-                }
-              }}
-              whileHover={{ 
-                scale: 1.1,
-                transition: { duration: 0.5 }
-              }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Logo width={150} height={150} />
-            </motion.div>
+            {/* Enlarged centered logo */}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ 
+                  scale: 1,
+                  transition: {
+                    delay: 0.3,
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 200
+                  }
+                }}
+                whileHover={{ 
+                  scale: 1.1,
+                  transition: { duration: 0.5 }
+                }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Logo width={250} height={250} />
+              </motion.div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-            >
-              <Title
-                level={1}
-                style={{
-                  margin: 0,
-                  fontSize: 'clamp(2rem, 6vw, 3.5rem)',
-                  fontWeight: 700,
-                  background: 'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Honey Date 💞
-              </Title>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7, duration: 0.6 }}
             >
               <Text
                 style={{
