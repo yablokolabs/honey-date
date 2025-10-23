@@ -95,10 +95,10 @@ export default function EventInfo() {
                 height: '100%',
               }}
             >
-              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.5rem' }}>
+              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.5rem', textAlign: 'left' }}>
                 Event Schedule
               </Title>
-              <Text style={{ fontSize: '1rem', color: '#5A3A31', display: 'block', lineHeight: '1.8' }}>
+              <Text style={{ fontSize: '1rem', color: '#5A3A31', display: 'block', lineHeight: '1.8', textAlign: 'left' }}>
                 <strong>Every Friday & Saturday</strong>
                 <br />
                 7:00 PM - 10:00 PM
@@ -128,10 +128,10 @@ export default function EventInfo() {
                 height: '100%',
               }}
             >
-              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.5rem' }}>
+              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.5rem', textAlign: 'left' }}>
                 What You Get
               </Title>
-              <Text style={{ fontSize: '1rem', color: '#5A3A31', display: 'block', lineHeight: '1.8' }}>
+              <Text style={{ fontSize: '1rem', color: '#5A3A31', display: 'block', lineHeight: '1.8', textAlign: 'left' }}>
                 10+ curated speed dates
                 <br />
                 Free welcome cocktail
@@ -179,10 +179,10 @@ export default function EventInfo() {
                   >
                     {step.icon}
                   </motion.div>
-                  <Title level={4} style={{ color: '#5A3A31', marginBottom: '8px', fontSize: '1.2rem' }}>
+                  <Title level={4} style={{ color: '#5A3A31', marginBottom: '8px', fontSize: '1.2rem', textAlign: 'center' }}>
                     {step.title}
                   </Title>
-                  <Text style={{ fontSize: '0.9rem', color: '#8B6B61' }}>
+                  <Text style={{ fontSize: '0.9rem', color: '#8B6B61', display: 'block', textAlign: 'center' }}>
                     {step.description}
                   </Text>
                 </motion.div>
@@ -199,7 +199,7 @@ export default function EventInfo() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Title level={3} style={{ color: '#5A3A31', marginBottom: '24px', fontSize: '1.8rem' }}>
+          <Title level={3} style={{ color: '#5A3A31', marginBottom: '24px', fontSize: '1.8rem', textAlign: 'center' }}>
             AI-Generated Couple Experiences
           </Title>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
@@ -223,7 +223,7 @@ export default function EventInfo() {
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
-                className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-6"
+                className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-6 text-center mt-6"
               >
                 <div className="text-3xl sm:text-4xl mb-4">{item.icon}</div>
                 <h4 className="text-xl sm:text-2xl font-bold text-pink-900 mb-2">{item.title}</h4>

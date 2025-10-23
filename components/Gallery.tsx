@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Card, Typography } from 'antd';
+import Image from 'next/image';
 
 const { Text } = Typography;
 
@@ -26,37 +27,37 @@ const galleryItems: GalleryItem[] = [
     title: 'Speed-Date Fridays',
     description: 'Meet 10+ singles in one night',
     gradient: 'linear-gradient(135deg, rgba(255, 20, 147, 0.9), rgba(255, 105, 180, 0.8))',
-    image: 'couple-chatting'
+    image: 'Speed date fridays.jpg'
   },
   {
     title: 'Romantic Dinners',
     description: 'Enjoy intimate meals for two',
     gradient: 'linear-gradient(135deg, rgba(255, 127, 137, 0.9), rgba(255, 182, 193, 0.8))',
-    image: 'couple-dining'
+    image: 'Romantic dinners.jpg'
   },
   {
     title: 'Signature Cocktails',
     description: 'Exclusive couple drinks',
     gradient: 'linear-gradient(135deg, rgba(255, 218, 185, 0.9), rgba(255, 160, 122, 0.8))',
-    image: 'couple-cocktails'
+    image: 'Signature cocktails.jpg'
   },
   {
     title: 'Fun Activities',
     description: 'Games and entertainment for couples',
     gradient: 'linear-gradient(135deg, rgba(255, 105, 180, 0.9), rgba(255, 20, 147, 0.8))',
-    image: 'couple-activities'
+    image: 'Fun activities.jpg'
   },
   {
     title: 'Weekend Getaways',
     description: 'Romantic escapes for matched couples',
     gradient: 'linear-gradient(135deg, rgba(219, 112, 147, 0.9), rgba(255, 105, 180, 0.8))',
-    image: 'couple-getaway'
+    image: 'Weekend getaways.jpg'
   },
   {
     title: 'Photo Sessions',
     description: 'Capture your special moments',
     gradient: 'linear-gradient(135deg, rgba(255, 182, 193, 0.9), rgba(255, 192, 203, 0.8))',
-    image: 'couple-photos'
+    image: 'Photo sessions.jpg'
   },
 ];
 
@@ -78,9 +79,9 @@ export default function Gallery() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-900 mb-4">
-            Experience Love in the Air
+            Romantic Moments Captured
           </h2>
-          <p className="text-lg sm:text-xl text-pink-700 max-w-2xl mx-auto">
+          <p className="text-1xl sm:text-2xl md:text-2xl font-bold text-pink-400 mb-4">
             From first meetings to romantic moments, we create the perfect atmosphere for connections
           </p>
         </motion.div>
@@ -113,9 +114,15 @@ export default function Gallery() {
                     position: 'relative',
                   }}
                 >
-                  {/* Placeholder for AI-generated images */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                  {/* AI-generated images */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={`/${item.image}`}
+                      alt={item.title}
+                      fill
+                      className="object-cover rounded-2xl"
+                      sizes="(max-width: 768px) 250px, 300px"
+                    />
                   </div>
                   
                   <motion.div
@@ -186,9 +193,15 @@ export default function Gallery() {
                     position: 'relative',
                   }}
                 >
-                  {/* Placeholder for AI-generated images */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-20">
-                    <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16" />
+                  {/* AI-generated images */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={`/${item.image}`}
+                      alt={item.title}
+                      fill
+                      className="object-cover rounded-2xl"
+                      sizes="(max-width: 768px) 250px, 300px"
+                    />
                   </div>
                   
                   <motion.div

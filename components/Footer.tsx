@@ -36,7 +36,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Title level={3} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: '1.8rem' }}>
+            <Title level={3} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: '1.8rem', textAlign: 'left' }}>
               HoneyDate.club
             </Title>
             <Text
@@ -45,6 +45,7 @@ export default function Footer() {
                 fontSize: '0.9rem',
                 fontWeight: 400,
                 display: 'block',
+                textAlign: 'left',
                 lineHeight: '1.6',
                 marginBottom: '24px',
               }}
@@ -87,7 +88,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: '1.5rem' }}>
+            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: '1.5rem', textAlign: 'left' }}>
               Quick Links
             </Title>
             <ul className="space-y-3">
@@ -112,7 +113,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: '1.5rem' }}>
+            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: '1.5rem', textAlign: 'left' }}>
               Stay Updated
             </Title>
             <Text
@@ -120,6 +121,7 @@ export default function Footer() {
                 color: '#FFFFFF',
                 fontSize: '0.9rem',
                 display: 'block',
+                textAlign: 'left',
                 marginBottom: '16px',
                 lineHeight: '1.5',
               }}

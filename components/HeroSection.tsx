@@ -111,6 +111,7 @@ export default function HeroSection() {
               fontWeight: 700,
               lineHeight: '1.3',
               display: 'block',
+              textAlign: 'center',
               textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
               marginBottom: '12px',
             }}
@@ -134,6 +135,7 @@ export default function HeroSection() {
                 fontWeight: 500,
                 marginTop: '8px',
                 display: 'block',
+                textAlign: 'center',
                 lineHeight: '1.6',
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
               }}
