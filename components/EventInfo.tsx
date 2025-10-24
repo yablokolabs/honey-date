@@ -54,29 +54,6 @@ export default function EventInfo() {
         transition={{ duration: 0.6 }}
         className="w-full max-w-full px-4"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <Title
-            level={2}
-            style={{
-              textAlign: 'center',
-              color: '#5A3A31',
-              fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
-              fontWeight: 700,
-              marginBottom: '24px',
-            }}
-          >
-            How It Works
-          </Title>
-          <p className="text-lg sm:text-xl text-pink-700 max-w-2xl mx-auto">
-            Discover love through our simple 4-step process designed for meaningful connections
-          </p>
-        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
           <motion.div
@@ -207,17 +184,17 @@ export default function EventInfo() {
               {
                 title: "Personalized Matchmaking",
                 description: "Our AI analyzes compatibility for better matches",
-                icon: "🤖"
+                icon: ""
               },
               {
                 title: "Bustling Social Atmosphere",
                 description: "Vibrant environment where connections naturally flourish",
-                icon: "🎉"
+                icon: ""
               },
               {
                 title: "Romantic Settings",
                 description: "Carefully designed spaces for intimate conversations",
-                icon: "🌹"
+                icon: ""
               }
             ].map((item: FeatureItem, index: number) => (
               <motion.div

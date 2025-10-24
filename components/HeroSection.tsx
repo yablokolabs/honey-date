@@ -11,7 +11,9 @@ const { Text } = Typography;
 // Define type for heart configurations
 interface HeartConfig {
   initialX: number;
+  initialY: number;
   animateX: number;
+  animateY: number;
   size: number;
   delay: number;
   duration: number;
@@ -20,14 +22,37 @@ interface HeartConfig {
 // Predefined heart positions and sizes to avoid random values that cause hydration issues
 // Using fixed values for both initial and animate properties to ensure SSR/CSR consistency
 const HEART_CONFIGURATIONS: HeartConfig[] = [
-  { initialX: 15, animateX: 25, size: 18, delay: 0, duration: 10 },
-  { initialX: 85, animateX: 75, size: 22, delay: 1.5, duration: 11 },
-  { initialX: 30, animateX: 40, size: 15, delay: 3, duration: 9 },
-  { initialX: 70, animateX: 60, size: 20, delay: 4.5, duration: 12 },
-  { initialX: 10, animateX: 20, size: 16, delay: 6, duration: 10 },
-  { initialX: 90, animateX: 80, size: 19, delay: 7.5, duration: 8 },
-  { initialX: 45, animateX: 55, size: 17, delay: 9, duration: 11 },
-  { initialX: 55, animateX: 45, size: 21, delay: 10.5, duration: 9 }
+  // Left side hearts - varied starting heights
+  { initialX: 5, initialY: 100, animateX: 15, animateY: -10, size: 18, delay: 0, duration: 10 },
+  { initialX: 10, initialY: 110, animateX: 25, animateY: -15, size: 22, delay: 1.5, duration: 11 },
+  { initialX: 15, initialY: 95, animateX: 35, animateY: -5, size: 15, delay: 3, duration: 9 },
+  { initialX: 20, initialY: 105, animateX: 10, animateY: -20, size: 20, delay: 4.5, duration: 12 },
+  { initialX: 25, initialY: 115, animateX: 45, animateY: -8, size: 16, delay: 6, duration: 10 },
+  
+  // Center-left hearts - mixed heights
+  { initialX: 35, initialY: 100, animateX: 55, animateY: -12, size: 19, delay: 7.5, duration: 8 },
+  { initialX: 40, initialY: 120, animateX: 30, animateY: -18, size: 17, delay: 9, duration: 11 },
+  { initialX: 45, initialY: 90, animateX: 65, animateY: -6, size: 21, delay: 10.5, duration: 9 },
+  { initialX: 50, initialY: 108, animateX: 40, animateY: -14, size: 18, delay: 12, duration: 10 },
+  
+  // Center-right hearts - varied elevations
+  { initialX: 55, initialY: 115, animateX: 75, animateY: -9, size: 16, delay: 13.5, duration: 11 },
+  { initialX: 60, initialY: 95, animateX: 50, animateY: -16, size: 20, delay: 15, duration: 9 },
+  { initialX: 65, initialY: 125, animateX: 85, animateY: -4, size: 17, delay: 16.5, duration: 12 },
+  { initialX: 70, initialY: 102, animateX: 60, animateY: -11, size: 19, delay: 18, duration: 8 },
+  
+  // Right side hearts - different starting points
+  { initialX: 75, initialY: 118, animateX: 95, animateY: -7, size: 15, delay: 19.5, duration: 10 },
+  { initialX: 80, initialY: 88, animateX: 70, animateY: -19, size: 22, delay: 21, duration: 11 },
+  { initialX: 85, initialY: 112, animateX: 100, animateY: -3, size: 18, delay: 22.5, duration: 9 },
+  { initialX: 90, initialY: 98, animateX: 80, animateY: -13, size: 20, delay: 24, duration: 12 },
+  { initialX: 95, initialY: 106, animateX: 85, animateY: -17, size: 16, delay: 25.5, duration: 10 },
+  
+  // Additional scattered hearts for fuller coverage - extreme positions
+  { initialX: 2, initialY: 122, animateX: 20, animateY: -2, size: 14, delay: 27, duration: 11 },
+  { initialX: 98, initialY: 92, animateX: 80, animateY: -21, size: 19, delay: 28.5, duration: 9 },
+  { initialX: 30, initialY: 114, animateX: 50, animateY: -5, size: 17, delay: 30, duration: 10 },
+  { initialX: 70, initialY: 96, animateX: 90, animateY: -8, size: 15, delay: 31.5, duration: 12 },
 ];
 
 // Define type for feature items
@@ -44,13 +69,13 @@ export default function HeroSection() {
           key={index}
           initial={{
             opacity: 0,
-            y: '100vh',
-            x: `${config.initialX}vw`,
+            left: `${config.initialX}vw`,
+            top: `${config.initialY}vh`,
           }}
           animate={{
             opacity: [0, 0.6, 0],
-            y: '-20vh',
-            x: `${config.animateX}vw`,
+            left: `${config.animateX}vw`,
+            top: `${config.animateY}vh`,
           }}
           transition={{
             duration: config.duration,
@@ -63,6 +88,7 @@ export default function HeroSection() {
             fontSize: `${config.size}px`,
             color: '#FFFFFFaa',
             pointerEvents: 'none',
+            zIndex: 0,
           }}
           className="sm:text-sm md:text-base"
         >

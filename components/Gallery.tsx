@@ -261,17 +261,17 @@ export default function Gallery() {
             {
               title: "AI-Generated Couple Experiences",
               description: "Our AI-curated experiences ensure every moment is picture-perfect",
-              icon: "💕"
+              icon: ""
             },
             {
               title: "Bustling Social Atmosphere",
               description: "Vibrant environment where connections naturally flourish",
-              icon: "🎉"
+              icon: ""
             },
             {
               title: "Romantic Settings",
               description: "Carefully designed spaces for intimate conversations",
-              icon: "🌹"
+              icon: ""
             }
           ].map((item: FeatureItem, index: number) => (
             <motion.div
