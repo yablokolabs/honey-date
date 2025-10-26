@@ -97,8 +97,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact/Footer Section */}
-      <section id="contact" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-200 to-pink-300 py-6 sm:py-8 w-full max-w-full overflow-x-hidden">
+      {/* Contact/Footer Section (no min-h-screen so footer sizes naturally) */}
+      <section id="contact" className="relative w-full max-w-full bg-gradient-to-b from-pink-200 to-pink-300 py-12 sm:py-16 overflow-x-hidden">
         <CupidAnimation density="medium" />
         <div className="w-full max-w-full relative z-10">
           <Footer />

@@ -27,8 +27,8 @@ export default function Footer() {
       transition={{ duration: 0.8 }}
       className="py-12 sm:py-16 px-4 sm:px-8 relative w-full max-w-full"
     >
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 md:px-12 glassmorphism rounded-3xl p-8 sm:p-12 md:p-16 romantic-glow">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16">
+      {/* Removed outer container to make footer full-width and flow directly in page; inner content preserved */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16">
           {/* Brand Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,7 +223,6 @@ export default function Footer() {
             © 2025 HoneyDate.club — Where Love Meets Over Coffee & Cocktails
           </Text>
         </motion.div>
-      </div>
     </motion.footer>
   );
 }

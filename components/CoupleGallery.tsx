@@ -32,9 +32,14 @@ export default function CoupleGallery() {
           transition={{ duration: 0.6 }}
           whileHover={{ scale: 1.02, y: -5 }}
         >
-          <div className="relative h-64 sm:h-80 md:h-[450px]">
-            <img src="/honey_date_event.jpg" alt="Couples enjoying Honey Date events" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+          {/* Use h-auto + object-contain so the full image is visible (no cropping) */}
+          <div className="relative w-full h-auto">
+            <img
+              src="/honey_date_event.jpg"
+              alt="Couples enjoying Honey Date events"
+              className="w-full h-auto object-contain"
+            />
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/50 to-transparent" />
           </div>
         </motion.div>
 
