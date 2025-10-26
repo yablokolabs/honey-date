@@ -5,6 +5,7 @@ import { Button, Space, Typography } from 'antd';
 import { motion } from 'framer-motion';
 import { HeartOutlined, CalendarOutlined, CoffeeOutlined } from '@ant-design/icons';
 import Logo from './Logo';
+import CupidAnimation from './CupidAnimation';
 
 const { Text } = Typography;
 
@@ -64,16 +65,20 @@ interface FeatureItem {
 export default function HeroSection() {
   return (
     <div className="relative flex items-center justify-center min-h-screen p-4 overflow-hidden">
-      {HEART_CONFIGURATIONS.map((config, index) => (
+      {/* Cupid Animations Background */}
+      <CupidAnimation density="high" />
+      
+      {/* Floating Hearts (keeping some for variety) */}
+      {HEART_CONFIGURATIONS.slice(0, 10).map((config, index) => (
         <motion.div
-          key={index}
+          key={`heart-${index}`}
           initial={{
             opacity: 0,
             left: `${config.initialX}vw`,
             top: `${config.initialY}vh`,
           }}
           animate={{
-            opacity: [0, 0.6, 0],
+            opacity: [0, 0.4, 0],
             left: `${config.animateX}vw`,
             top: `${config.animateY}vh`,
           }}
@@ -120,6 +125,8 @@ export default function HeroSection() {
               transition: { duration: 0.5 }
             }}
             whileTap={{ scale: 0.9 }}
+            className="romantic-glow"
+            style={{ borderRadius: '50%' }}
           >
             <Logo width={750} height={400} className="sm:w-48 sm:h-48 mx-auto" />
           </motion.div>
@@ -138,7 +145,7 @@ export default function HeroSection() {
               lineHeight: '1.3',
               display: 'block',
               textAlign: 'center',
-              textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
+              textShadow: '0 3px 8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 105, 180, 0.5)',
               marginBottom: '12px',
             }}
           >
@@ -175,7 +182,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '30px' }}
+          style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '20px' }}
           className="flex-col sm:flex-row"
         >
           <motion.div
@@ -246,7 +253,7 @@ export default function HeroSection() {
             gap: '16px',
             justifyContent: 'center',
             flexWrap: 'wrap',
-            marginTop: '24px',
+            marginTop: '16px',
           }}
         >
           {[

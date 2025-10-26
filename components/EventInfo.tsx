@@ -46,7 +46,7 @@ export default function EventInfo() {
   ];
 
   return (
-    <section className="py-12 sm:py-16 px-4 relative">
+    <section className="py-8 px-4 relative">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -55,27 +55,28 @@ export default function EventInfo() {
         className="w-full max-w-full px-4"
       >
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.05, y: -5 }}
           >
             <Card
-              className="glassmorphism"
+              className="glassmorphism romantic-glow"
               style={{
                 borderRadius: '20px',
-                padding: '24px',
-                border: '2px solid rgba(255, 255, 255, 0.3)',
+                padding: '20px',
+                border: '2px solid rgba(255, 255, 255, 0.4)',
                 height: '100%',
+                boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
               }}
             >
-              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.5rem', textAlign: 'left' }}>
+              <Title level={3} style={{ color: '#5A3A31', marginBottom: '12px', fontSize: '1.4rem', textAlign: 'left' }}>
                 Event Schedule
               </Title>
-              <Text style={{ fontSize: '1rem', color: '#5A3A31', display: 'block', lineHeight: '1.8', textAlign: 'left' }}>
+              <Text style={{ fontSize: '0.95rem', color: '#5A3A31', display: 'block', lineHeight: '1.6', textAlign: 'left' }}>
                 <strong>Every Friday & Saturday</strong>
                 <br />
                 7:00 PM - 10:00 PM
@@ -94,21 +95,22 @@ export default function EventInfo() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.05, y: -5 }}
           >
             <Card
-              className="glassmorphism"
+              className="glassmorphism romantic-glow"
               style={{
                 borderRadius: '20px',
-                padding: '24px',
-                border: '2px solid rgba(255, 255, 255, 0.3)',
+                padding: '20px',
+                border: '2px solid rgba(255, 255, 255, 0.4)',
                 height: '100%',
+                boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
               }}
             >
-              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.5rem', textAlign: 'left' }}>
+              <Title level={3} style={{ color: '#5A3A31', marginBottom: '12px', fontSize: '1.4rem', textAlign: 'left' }}>
                 What You Get
               </Title>
-              <Text style={{ fontSize: '1rem', color: '#5A3A31', display: 'block', lineHeight: '1.8', textAlign: 'left' }}>
+              <Text style={{ fontSize: '0.95rem', color: '#5A3A31', display: 'block', lineHeight: '1.6', textAlign: 'left' }}>
                 10+ curated speed dates
                 <br />
                 Free welcome cocktail
@@ -132,14 +134,15 @@ export default function EventInfo() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Card
-            className="glassmorphism"
+            className="glassmorphism romantic-glow"
             style={{
               borderRadius: '20px',
-              padding: '32px 16px',
-              border: '2px solid rgba(255, 255, 255, 0.3)',
+              padding: '24px 16px',
+              border: '2px solid rgba(255, 255, 255, 0.4)',
+              boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
             }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {steps.map((step: StepItem, index: number) => (
                 <motion.div
                   key={index}
@@ -152,14 +155,14 @@ export default function EventInfo() {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-4 flex justify-center"
+                    className="mb-2 flex justify-center"
                   >
                     {step.icon}
                   </motion.div>
-                  <Title level={4} style={{ color: '#5A3A31', marginBottom: '8px', fontSize: '1.2rem', textAlign: 'center' }}>
+                  <Title level={4} style={{ color: '#5A3A31', marginBottom: '6px', fontSize: '1.1rem', textAlign: 'center' }}>
                     {step.title}
                   </Title>
-                  <Text style={{ fontSize: '0.9rem', color: '#8B6B61', display: 'block', textAlign: 'center' }}>
+                  <Text style={{ fontSize: '0.85rem', color: '#8B6B61', display: 'block', textAlign: 'center' }}>
                     {step.description}
                   </Text>
                 </motion.div>
@@ -170,7 +173,7 @@ export default function EventInfo() {
 
         {/* New section for couple experiences */}
         <motion.div
-          className="mt-12 sm:mt-20 text-center"
+          className="mt-6 sm:mt-8 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

@@ -63,7 +63,7 @@ const galleryItems: GalleryItem[] = [
 
 export default function Gallery() {
   return (
-    <section className="py-12 sm:py-16 px-4">
+    <section className="py-8 px-4">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -76,12 +76,12 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-900 mb-2 gradient-text">
             Romantic Moments Captured
           </h2>
-          <p className="text-1xl sm:text-2xl md:text-2xl font-bold text-pink-400 mb-4">
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-pink-400">
             From first meetings to romantic moments, we create the perfect atmosphere for connections
           </p>
         </motion.div>
@@ -96,22 +96,23 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15, duration: 0.5 }}
-                whileHover={{ scale: 1.05, y: -10 }}
+                whileHover={{ scale: 1.08, y: -15 }}
                 className="flex-shrink-0"
               >
                 <Card
-                  className="glassmorphism cursor-pointer relative overflow-hidden w-64 md:w-auto"
+                  className="glassmorphism cursor-pointer relative overflow-hidden w-64 md:w-auto romantic-glow"
                   style={{
                     width: '250px',
                     height: '350px',
                     borderRadius: '20px',
                     background: item.gradient,
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    border: '2px solid rgba(255, 255, 255, 0.4)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
                     padding: '20px',
                     position: 'relative',
+                    boxShadow: '0 15px 50px rgba(255, 105, 180, 0.3)',
                   }}
                 >
                   {/* AI-generated images */}
@@ -170,7 +171,7 @@ export default function Gallery() {
           </div>
           
           {/* Grid layout for desktop */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
@@ -178,19 +179,21 @@ export default function Gallery() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ scale: 1.05, y: -10 }}
+                whileHover={{ scale: 1.08, y: -15 }}
               >
                 <Card
-                  className="glassmorphism cursor-pointer relative overflow-hidden h-full"
+                  className="glassmorphism cursor-pointer relative overflow-hidden h-full romantic-glow"
                   style={{
                     borderRadius: '20px',
                     background: item.gradient,
-                    border: '2px solid rgba(255, 255, 255, 0.3)',
+                    border: '2px solid rgba(255, 255, 255, 0.4)',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
                     padding: '20px',
                     position: 'relative',
+                    minHeight: '320px',
+                    boxShadow: '0 15px 50px rgba(255, 105, 180, 0.3)',
                   }}
                 >
                   {/* AI-generated images */}
