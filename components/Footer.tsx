@@ -25,19 +25,19 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="py-12 sm:py-16 px-4 sm:px-8 relative w-full max-w-full"
+      className="relative w-full"
     >
-      {/* Removed outer container to make footer full-width and flow directly in page; inner content preserved */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 md:gap-16">
+      <div className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
           {/* Brand Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <Title level={3} style={{ color: '#FFFFFF', marginBottom: '20px', fontSize: 'clamp(1.5rem, 3vw, 1.8rem)', textAlign: 'left', textShadow: '0 2px 8px rgba(0,0,0,0.4)', fontWeight: 600 }}>
+            <Title level={3} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: 'clamp(1.5rem, 3vw, 1.8rem)', textAlign: 'left', textShadow: '0 2px 8px rgba(0,0,0,0.4)', fontWeight: 600 }}>
               HoneyDate.club
             </Title>
             <Text
@@ -47,15 +47,15 @@ export default function Footer() {
                 fontWeight: 400,
                 display: 'block',
                 textAlign: 'left',
-                lineHeight: '1.7',
-                marginBottom: '24px',
+                lineHeight: '1.8',
+                marginBottom: '28px',
                 textShadow: '0 1px 3px rgba(0,0,0,0.2)',
               }}
             >
               Bangalore's premier speed-dating café-bar where love meets over coffee and cocktails.
               Creating meaningful connections in a vibrant, romantic atmosphere.
             </Text>
-            <Space size={24}>
+            <Space size={28}>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.2, y: -5 }}
@@ -107,12 +107,12 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '20px', fontSize: 'clamp(1.2rem, 2.5vw, 1.4rem)', textAlign: 'left', textShadow: '0 2px 8px rgba(0,0,0,0.4)', fontWeight: 600 }}>
+            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: 'clamp(1.2rem, 2.5vw, 1.4rem)', textAlign: 'left', textShadow: '0 2px 8px rgba(0,0,0,0.4)', fontWeight: 600 }}>
               Quick Links
             </Title>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {['Events', 'Membership', 'Gallery', 'Testimonials', 'Contact Us'].map((item, index) => (
                 <motion.li
                   key={index}
@@ -145,9 +145,9 @@ export default function Footer() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '20px', fontSize: 'clamp(1.2rem, 2.5vw, 1.4rem)', textAlign: 'left', textShadow: '0 2px 8px rgba(0,0,0,0.4)', fontWeight: 600 }}>
+            <Title level={4} style={{ color: '#FFFFFF', marginBottom: '24px', fontSize: 'clamp(1.2rem, 2.5vw, 1.4rem)', textAlign: 'left', textShadow: '0 2px 8px rgba(0,0,0,0.4)', fontWeight: 600 }}>
               Stay Updated
             </Title>
             <Text
@@ -156,14 +156,14 @@ export default function Footer() {
                 fontSize: 'clamp(0.9rem, 2vw, 1rem)',
                 display: 'block',
                 textAlign: 'left',
-                marginBottom: '20px',
-                lineHeight: '1.6',
+                marginBottom: '24px',
+                lineHeight: '1.8',
                 textShadow: '0 1px 3px rgba(0,0,0,0.2)',
               }}
             >
               Subscribe to our newsletter for event updates and special offers
             </Text>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               <Input
                 placeholder="Your email address"
                 value={email}
@@ -223,6 +223,7 @@ export default function Footer() {
             © 2025 HoneyDate.club — Where Love Meets Over Coffee & Cocktails
           </Text>
         </motion.div>
+      </div>
     </motion.footer>
   );
 }

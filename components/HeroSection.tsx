@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { HeartOutlined, CalendarOutlined, CoffeeOutlined } from '@ant-design/icons';
 import Logo from './Logo';
 import CupidAnimation from './CupidAnimation';
+import MatchyModal from './MatchyModal';
 
 const { Text } = Typography;
 
@@ -142,11 +143,11 @@ export default function HeroSection() {
               fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
               color: '#FFFFFF',
               fontWeight: 700,
-              lineHeight: '1.3',
+              lineHeight: '1.4',
               display: 'block',
               textAlign: 'center',
               textShadow: '0 3px 8px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 105, 180, 0.5)',
-              marginBottom: '12px',
+              marginBottom: '16px',
             }}
           >
             Bangalore's Most Romantic Café-Bar for Singles
@@ -166,10 +167,10 @@ export default function HeroSection() {
                 fontSize: 'clamp(0.9rem, 2.5vw, 1.1rem)',
                 color: '#FFFFFF',
                 fontWeight: 500,
-                marginTop: '8px',
+                marginTop: '12px',
                 display: 'block',
                 textAlign: 'center',
-                lineHeight: '1.6',
+                lineHeight: '1.7',
                 textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
               }}
             >
@@ -182,7 +183,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.6 }}
-          style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '20px' }}
+          style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '32px' }}
           className="flex-col sm:flex-row"
         >
           <motion.div
@@ -201,7 +202,7 @@ export default function HeroSection() {
               icon={<CalendarOutlined />}
               style={{
                 height: 'auto',
-                padding: '12px 24px',
+                padding: '14px 28px',
                 fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                 borderRadius: '50px',
                 background: 'linear-gradient(135deg, #FF1493 0%, #FF69B4 100%)',
@@ -229,7 +230,7 @@ export default function HeroSection() {
               icon={<CoffeeOutlined />}
               style={{
                 height: 'auto',
-                padding: '12px 24px',
+                padding: '14px 28px',
                 fontSize: 'clamp(0.9rem, 2.5vw, 1rem)',
                 borderRadius: '50px',
                 background: 'transparent',
@@ -242,6 +243,19 @@ export default function HeroSection() {
               See Menu
             </Button>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.3, duration: 0.5 }}
+            whileHover={{
+              scale: 1.08,
+              boxShadow: '0 8px 30px rgba(255, 20, 147, 0.6)'
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <MatchyModal />
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -250,10 +264,10 @@ export default function HeroSection() {
           transition={{ delay: 1.4, duration: 0.6 }}
           style={{
             display: 'flex',
-            gap: '16px',
+            gap: '20px',
             justifyContent: 'center',
             flexWrap: 'wrap',
-            marginTop: '16px',
+            marginTop: '24px',
           }}
         >
           {[
@@ -287,7 +301,7 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-[-40px] left-1/2 transform -translate-x-1/2 hidden sm:block"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden sm:block"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2, duration: 0.5 }}

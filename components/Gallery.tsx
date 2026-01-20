@@ -63,22 +63,22 @@ const galleryItems: GalleryItem[] = [
 
 export default function Gallery() {
   return (
-    <section className="py-8 px-4">
+    <section className="w-full overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-full px-4"
+        className="w-full"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-16 sm:mb-20"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-900 mb-2 gradient-text">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-900 mb-6 gradient-text">
             Romantic Moments Captured
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl font-semibold text-pink-400">
@@ -87,8 +87,8 @@ export default function Gallery() {
         </motion.div>
 
         {/* Responsive gallery - horizontal scroll on mobile, grid on desktop */}
-        <div className="overflow-x-auto pb-4 scrollbar-hide md:overflow-visible md:pb-0 w-full max-w-full">
-          <div className="flex gap-4 sm:gap-6 px-2 sm:px-4 md:hidden w-max">
+        <div className="overflow-x-auto pb-4 scrollbar-hide md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+          <div className="flex gap-6 sm:gap-8 md:hidden min-w-min">
             {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
@@ -110,7 +110,7 @@ export default function Gallery() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
-                    padding: '20px',
+                    padding: '28px',
                     position: 'relative',
                     boxShadow: '0 15px 50px rgba(255, 105, 180, 0.3)',
                   }}
@@ -147,7 +147,7 @@ export default function Gallery() {
                         fontWeight: 700,
                         color: '#FFFFFF',
                         display: 'block',
-                        marginBottom: '8px',
+                        marginBottom: '12px',
                         textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -159,6 +159,7 @@ export default function Gallery() {
                         fontWeight: 500,
                         color: '#FFFFFF',
                         display: 'block',
+                        lineHeight: '1.6',
                         textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -171,7 +172,7 @@ export default function Gallery() {
           </div>
           
           {/* Grid layout for desktop */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
@@ -190,7 +191,7 @@ export default function Gallery() {
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'flex-end',
-                    padding: '20px',
+                    padding: '28px',
                     position: 'relative',
                     minHeight: '320px',
                     boxShadow: '0 15px 50px rgba(255, 105, 180, 0.3)',
@@ -228,7 +229,7 @@ export default function Gallery() {
                         fontWeight: 700,
                         color: '#FFFFFF',
                         display: 'block',
-                        marginBottom: '8px',
+                        marginBottom: '12px',
                         textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -240,6 +241,7 @@ export default function Gallery() {
                         fontWeight: 500,
                         color: '#FFFFFF',
                         display: 'block',
+                        lineHeight: '1.6',
                         textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -253,8 +255,8 @@ export default function Gallery() {
         </div>
 
         {/* Additional couple-focused content section */}
-        <motion.div 
-          className="mt-12 sm:mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
+        <motion.div
+          className="mt-20 sm:mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -280,10 +282,10 @@ export default function Gallery() {
             <motion.div
               key={index}
               whileHover={{ y: -10 }}
-              className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-6 text-center"
+              className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-8 text-center"
             >
-              <div className="text-3xl sm:text-4xl mb-4">{item.icon}</div>
-              <h3 className="text-xl sm:text-2xl font-bold text-pink-900 mb-2">{item.title}</h3>
+              <div className="text-3xl sm:text-4xl mb-6">{item.icon}</div>
+              <h3 className="text-xl sm:text-2xl font-bold text-pink-900 mb-3">{item.title}</h3>
               <p className="text-pink-700 text-sm sm:text-base">{item.description}</p>
             </motion.div>
           ))}

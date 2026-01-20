@@ -46,7 +46,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative w-full max-w-full overflow-x-hidden">
+    <div className="relative w-full overflow-x-hidden">
       {/* Navigation Dots - Hidden on mobile */}
       <div className="fixed right-4 sm:right-8 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
         <div className="flex flex-col space-y-4">
@@ -74,33 +74,33 @@ export default function Home() {
       </section>
 
       {/* Couple Gallery Section */}
-      <section id="couples" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-50 to-rose-50 py-6 sm:py-8 w-full max-w-full overflow-x-hidden">
+      <section id="couples" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-50 to-rose-50 py-20 sm:py-24 md:py-32 w-full overflow-hidden">
         <CupidAnimation density="medium" />
-        <div className="w-full max-w-full relative z-10">
+        <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <CoupleGallery />
         </div>
       </section>
 
       {/* Features Gallery Section */}
-      <section id="gallery" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-rose-50 to-pink-100 py-6 sm:py-8 w-full max-w-full overflow-x-hidden">
+      <section id="gallery" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-rose-50 to-pink-100 py-20 sm:py-24 md:py-32 w-full overflow-hidden">
         <CupidAnimation density="medium" />
-        <div className="w-full max-w-full relative z-10">
+        <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <Gallery />
         </div>
       </section>
 
       {/* Events Section */}
-      <section id="events" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-100 to-pink-200 py-6 sm:py-8 w-full max-w-full overflow-x-hidden">
+      <section id="events" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-100 to-pink-200 py-20 sm:py-24 md:py-32 w-full overflow-hidden">
         <CupidAnimation density="low" />
-        <div className="w-full max-w-full relative z-10">
+        <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <EventInfo />
         </div>
       </section>
 
       {/* Contact/Footer Section (no min-h-screen so footer sizes naturally) */}
-      <section id="contact" className="relative w-full max-w-full bg-gradient-to-b from-pink-200 to-pink-300 py-12 sm:py-16 overflow-x-hidden">
+      <section id="contact" className="relative w-full bg-gradient-to-b from-pink-200 to-pink-300 py-20 sm:py-24 md:py-32 overflow-hidden">
         <CupidAnimation density="medium" />
-        <div className="w-full max-w-full relative z-10">
+        <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <Footer />
         </div>
       </section>

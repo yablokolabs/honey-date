@@ -98,36 +98,44 @@ export default function CupidAnimation({ density = 'medium', className = '' }: C
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {cupids.map((config, index) => (
-        <motion.div
-          key={index}
-          initial={{
-            opacity: 0,
-            left: `${config.initialX + index * 15}%`,
-            top: `${config.initialY + index * 10}%`,
-            rotate: config.rotation,
-          }}
-          animate={{
-            opacity: [0, 0.3, 0.5, 0.3, 0],
-            left: `${config.animateX + index * 15}%`,
-            top: `${config.animateY + index * 10}%`,
-            rotate: [config.rotation, config.rotation + 360],
-          }}
-          transition={{
-            duration: config.duration + 2,
-            repeat: Infinity,
-            delay: config.delay + index,
-            ease: 'linear',
-          }}
-          style={{
-            position: 'absolute',
-            pointerEvents: 'none',
-            zIndex: 0,
-          }}
-        >
-          <img src="/cupid.svg" alt="Cupid" width={config.size * 10} height={config.size * 10} style={{ width: config.size * 10, height: config.size * 10, pointerEvents: 'none', userSelect: 'none' }} />
-        </motion.div>
-      ))}
+      {cupids.map((config, index) => {
+        // Ensure positions stay within 0-100% bounds
+        const initialX = Math.min(95, config.initialX);
+        const initialY = Math.min(95, config.initialY);
+        const animateX = Math.min(95, config.animateX);
+        const animateY = Math.min(95, config.animateY);
+
+        return (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              left: `${initialX}%`,
+              top: `${initialY}%`,
+              rotate: config.rotation,
+            }}
+            animate={{
+              opacity: [0, 0.3, 0.5, 0.3, 0],
+              left: `${animateX}%`,
+              top: `${animateY}%`,
+              rotate: [config.rotation, config.rotation + 360],
+            }}
+            transition={{
+              duration: config.duration + 2,
+              repeat: Infinity,
+              delay: config.delay + index,
+              ease: 'linear',
+            }}
+            style={{
+              position: 'absolute',
+              pointerEvents: 'none',
+              zIndex: 0,
+            }}
+          >
+            <img src="/cupid.svg" alt="Cupid" width={config.size * 10} height={config.size * 10} style={{ width: config.size * 10, height: config.size * 10, pointerEvents: 'none', userSelect: 'none' }} />
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

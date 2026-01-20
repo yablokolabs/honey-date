@@ -16,11 +16,11 @@ export default function CoupleGallery() {
   ];
 
   return (
-    <section className="py-8 px-4">
-      <motion.div className="max-w-6xl mx-auto space-y-8 text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-        <motion.div className="text-center mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <h2 className="text-4xl md:text-5xl font-bold text-pink-900 mb-3 gradient-text">Couples in Action</h2>
-          <p className="text-xl md:text-2xl font-bold text-pink-400 mb-2">Real Connections, Real Moments</p>
+    <section className="w-full overflow-hidden">
+      <motion.div className="w-full space-y-16 text-center" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
+        <motion.div className="text-center mb-12" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-pink-900 mb-5 gradient-text">Couples in Action</h2>
+          <p className="text-xl md:text-2xl font-bold text-pink-400 mb-4">Real Connections, Real Moments</p>
           <p className="text-lg md:text-xl font-semibold text-pink-600">Join our weekly events and become part of our success stories</p>
         </motion.div>
 
@@ -43,18 +43,18 @@ export default function CoupleGallery() {
           </div>
         </motion.div>
 
-        <motion.div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
+        <motion.div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
           {highlights.map((h, i) => (
-            <motion.div 
-              key={i} 
-              whileHover={{ y: -12, scale: 1.05 }} 
-              className="glassmorphism rounded-2xl p-4 text-center"
-              style={{ 
+            <motion.div
+              key={i}
+              whileHover={{ y: -12, scale: 1.05 }}
+              className="glassmorphism rounded-2xl p-8 text-center"
+              style={{
                 boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
               }}
             >
-              <div className="text-3xl sm:text-4xl mb-3">{h.icon}</div>
-              <h3 className="text-lg sm:text-xl font-bold text-pink-900 mb-1">{h.title}</h3>
+              <div className="text-3xl sm:text-4xl mb-6">{h.icon}</div>
+              <h3 className="text-lg sm:text-xl font-bold text-pink-900 mb-3">{h.title}</h3>
               <p className="text-pink-700 text-sm">{h.description}</p>
             </motion.div>
           ))}

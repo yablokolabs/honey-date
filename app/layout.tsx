@@ -3,6 +3,7 @@ import './globals.css';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://honeydate.club'),
   title: 'Honey Date 💞 - Coming Soon',
   description: 'Where Love Meets Over Coffee & Cocktails. Weekly speed-dating events for working singles in Bangalore.',
   icons: {

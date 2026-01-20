@@ -46,16 +46,16 @@ export default function EventInfo() {
   ];
 
   return (
-    <section className="py-8 px-4 relative">
+    <section className="w-full relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="w-full max-w-full px-4"
+        className="w-full"
       >
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,16 +67,16 @@ export default function EventInfo() {
               className="glassmorphism romantic-glow"
               style={{
                 borderRadius: '20px',
-                padding: '20px',
+                padding: '28px',
                 border: '2px solid rgba(255, 255, 255, 0.4)',
                 height: '100%',
                 boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
               }}
             >
-              <Title level={3} style={{ color: '#5A3A31', marginBottom: '12px', fontSize: '1.4rem', textAlign: 'left' }}>
+              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.4rem', textAlign: 'left' }}>
                 Event Schedule
               </Title>
-              <Text style={{ fontSize: '0.95rem', color: '#5A3A31', display: 'block', lineHeight: '1.6', textAlign: 'left' }}>
+              <Text style={{ fontSize: '0.95rem', color: '#5A3A31', display: 'block', lineHeight: '1.8', textAlign: 'left' }}>
                 <strong>Every Friday & Saturday</strong>
                 <br />
                 7:00 PM - 10:00 PM
@@ -101,16 +101,16 @@ export default function EventInfo() {
               className="glassmorphism romantic-glow"
               style={{
                 borderRadius: '20px',
-                padding: '20px',
+                padding: '28px',
                 border: '2px solid rgba(255, 255, 255, 0.4)',
                 height: '100%',
                 boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
               }}
             >
-              <Title level={3} style={{ color: '#5A3A31', marginBottom: '12px', fontSize: '1.4rem', textAlign: 'left' }}>
+              <Title level={3} style={{ color: '#5A3A31', marginBottom: '16px', fontSize: '1.4rem', textAlign: 'left' }}>
                 What You Get
               </Title>
-              <Text style={{ fontSize: '0.95rem', color: '#5A3A31', display: 'block', lineHeight: '1.6', textAlign: 'left' }}>
+              <Text style={{ fontSize: '0.95rem', color: '#5A3A31', display: 'block', lineHeight: '1.8', textAlign: 'left' }}>
                 10+ curated speed dates
                 <br />
                 Free welcome cocktail
@@ -137,12 +137,12 @@ export default function EventInfo() {
             className="glassmorphism romantic-glow"
             style={{
               borderRadius: '20px',
-              padding: '24px 16px',
+              padding: '32px 24px',
               border: '2px solid rgba(255, 255, 255, 0.4)',
               boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
             }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
               {steps.map((step: StepItem, index: number) => (
                 <motion.div
                   key={index}
@@ -155,14 +155,14 @@ export default function EventInfo() {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-2 flex justify-center"
+                    className="mb-4 flex justify-center"
                   >
                     {step.icon}
                   </motion.div>
-                  <Title level={4} style={{ color: '#5A3A31', marginBottom: '6px', fontSize: '1.1rem', textAlign: 'center' }}>
+                  <Title level={4} style={{ color: '#5A3A31', marginBottom: '10px', fontSize: '1.1rem', textAlign: 'center' }}>
                     {step.title}
                   </Title>
-                  <Text style={{ fontSize: '0.85rem', color: '#8B6B61', display: 'block', textAlign: 'center' }}>
+                  <Text style={{ fontSize: '0.85rem', color: '#8B6B61', display: 'block', textAlign: 'center', lineHeight: '1.5' }}>
                     {step.description}
                   </Text>
                 </motion.div>
@@ -173,16 +173,16 @@ export default function EventInfo() {
 
         {/* New section for couple experiences */}
         <motion.div
-          className="mt-6 sm:mt-8 text-center"
+          className="mt-16 sm:mt-20 md:mt-24 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <Title level={3} style={{ color: '#5A3A31', marginBottom: '24px', fontSize: '1.8rem', textAlign: 'center' }}>
+          <Title level={3} style={{ color: '#5A3A31', marginBottom: '40px', fontSize: '1.8rem', textAlign: 'center' }}>
             AI-Generated Couple Experiences
           </Title>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Personalized Matchmaking",
@@ -203,10 +203,10 @@ export default function EventInfo() {
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
-                className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-6 text-center mt-6"
+                className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-8 text-center"
               >
-                <div className="text-3xl sm:text-4xl mb-4">{item.icon}</div>
-                <h4 className="text-xl sm:text-2xl font-bold text-pink-900 mb-2">{item.title}</h4>
+                <div className="text-3xl sm:text-4xl mb-6">{item.icon}</div>
+                <h4 className="text-xl sm:text-2xl font-bold text-pink-900 mb-3">{item.title}</h4>
                 <p className="text-pink-700 text-sm sm:text-base">{item.description}</p>
               </motion.div>
             ))}
