@@ -309,6 +309,59 @@ section {
   position: relative;
 }
 
+/* Spacing utilities to override global reset */
+.py-section {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
+.py-section-sm {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.py-section-md {
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
+
+.py-section-lg {
+  padding-top: 10rem !important;
+  padding-bottom: 10rem !important;
+}
+
+.pt-section {
+  padding-top: 4rem !important;
+}
+
+.pb-section {
+  padding-bottom: 4rem !important;
+}
+
+.mt-section {
+  margin-top: 4rem !important;
+}
+
+.mb-section {
+  margin-bottom: 4rem !important;
+}
+
+.space-y-section > * + * {
+  margin-top: 4rem !important;
+}
+
+.space-y-section-sm > * + * {
+  margin-top: 6rem !important;
+}
+
+.space-y-section-md > * + * {
+  margin-top: 8rem !important;
+}
+
+.space-y-section-lg > * + * {
+  margin-top: 10rem !important;
+}
+
 /* Ensure AntdRegistry container doesn't cause overflow */
 .AntdRegistry {
   width: 100%;

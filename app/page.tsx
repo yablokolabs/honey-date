@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       {/* Couple Gallery Section */}
-      <section id="couples" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-50 to-rose-50 py-20 sm:py-24 md:py-32 w-full overflow-hidden">
+      <section id="couples" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-50 to-rose-50 py-section-md w-full overflow-hidden">
         <CupidAnimation density="medium" />
         <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <CoupleGallery />
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Features Gallery Section */}
-      <section id="gallery" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-rose-50 to-pink-100 py-20 sm:py-24 md:py-32 w-full overflow-hidden">
+      <section id="gallery" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-rose-50 to-pink-100 py-section-md w-full overflow-hidden">
         <CupidAnimation density="medium" />
         <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <Gallery />
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Events Section */}
-      <section id="events" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-100 to-pink-200 py-20 sm:py-24 md:py-32 w-full overflow-hidden">
+      <section id="events" className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-100 to-pink-200 py-section-md w-full overflow-hidden">
         <CupidAnimation density="low" />
         <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <EventInfo />
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Contact/Footer Section (no min-h-screen so footer sizes naturally) */}
-      <section id="contact" className="relative w-full bg-gradient-to-b from-pink-200 to-pink-300 py-20 sm:py-24 md:py-32 overflow-hidden">
+      <section id="contact" className="relative w-full bg-gradient-to-b from-pink-200 to-pink-300 py-section-md overflow-hidden">
         <CupidAnimation density="medium" />
         <div className="w-full relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           <Footer />

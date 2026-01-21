@@ -65,7 +65,7 @@ interface FeatureItem {
 
 export default function HeroSection() {
   return (
-    <div className="relative flex items-center justify-center min-h-screen p-4 overflow-hidden">
+    <div className="relative flex items-center justify-center min-h-screen pb-section p-4 overflow-hidden">
       {/* Cupid Animations Background */}
       <CupidAnimation density="high" />
       

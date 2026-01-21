@@ -25,7 +25,7 @@ export default function Footer() {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8 }}
-      className="relative w-full"
+      className="relative w-full pt-section"
     >
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">

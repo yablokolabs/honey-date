@@ -55,7 +55,7 @@ export default function EventInfo() {
         className="w-full"
       >
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 mb-section !important">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +67,7 @@ export default function EventInfo() {
               className="glassmorphism romantic-glow"
               style={{
                 borderRadius: '20px',
-                padding: '28px',
+                padding: '36px',
                 border: '2px solid rgba(255, 255, 255, 0.4)',
                 height: '100%',
                 boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
@@ -101,7 +101,7 @@ export default function EventInfo() {
               className="glassmorphism romantic-glow"
               style={{
                 borderRadius: '20px',
-                padding: '28px',
+                padding: '36px',
                 border: '2px solid rgba(255, 255, 255, 0.4)',
                 height: '100%',
                 boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
@@ -137,12 +137,12 @@ export default function EventInfo() {
             className="glassmorphism romantic-glow"
             style={{
               borderRadius: '20px',
-              padding: '32px 24px',
+              padding: '40px 32px',
               border: '2px solid rgba(255, 255, 255, 0.4)',
               boxShadow: '0 10px 40px rgba(255, 105, 180, 0.2)',
             }}
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 sm:gap-12">
               {steps.map((step: StepItem, index: number) => (
                 <motion.div
                   key={index}
@@ -155,7 +155,7 @@ export default function EventInfo() {
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="mb-4 flex justify-center"
+                    className="mb-6 !important flex justify-center"
                   >
                     {step.icon}
                   </motion.div>
@@ -173,7 +173,7 @@ export default function EventInfo() {
 
         {/* New section for couple experiences */}
         <motion.div
-          className="mt-16 sm:mt-20 md:mt-24 text-center"
+          className="mt-section text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -203,10 +203,10 @@ export default function EventInfo() {
               <motion.div
                 key={index}
                 whileHover={{ y: -10 }}
-                className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-8 text-center"
+                className="bg-white bg-opacity-30 backdrop-blur-sm rounded-2xl p-10 text-center"
               >
-                <div className="text-3xl sm:text-4xl mb-6">{item.icon}</div>
-                <h4 className="text-xl sm:text-2xl font-bold text-pink-900 mb-3">{item.title}</h4>
+                <div className="text-3xl sm:text-4xl mb-10 !important">{item.icon}</div>
+                <h4 className="text-xl sm:text-2xl font-bold text-pink-900 mb-6 !important">{item.title}</h4>
                 <p className="text-pink-700 text-sm sm:text-base">{item.description}</p>
               </motion.div>
             ))}

@@ -76,7 +76,7 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 sm:mb-20"
+          className="text-center mb-section !important"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-pink-900 mb-6 gradient-text">
             Romantic Moments Captured
@@ -87,8 +87,8 @@ export default function Gallery() {
         </motion.div>
 
         {/* Responsive gallery - horizontal scroll on mobile, grid on desktop */}
-        <div className="overflow-x-auto pb-4 scrollbar-hide md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
-          <div className="flex gap-6 sm:gap-8 md:hidden min-w-min">
+        <div className="overflow-x-auto pb-12 scrollbar-hide md:overflow-visible md:pb-0 -mx-4 px-4 md:mx-0 md:px-0">
+          <div className="flex gap-8 sm:gap-10 md:hidden min-w-min">
             {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
@@ -125,7 +125,7 @@ export default function Gallery() {
                       sizes="(max-width: 768px) 250px, 300px"
                     />
                   </div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.1 }}
@@ -147,7 +147,7 @@ export default function Gallery() {
                         fontWeight: 700,
                         color: '#FFFFFF',
                         display: 'block',
-                        marginBottom: '12px',
+                        marginBottom: '20px',
                         textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -159,7 +159,7 @@ export default function Gallery() {
                         fontWeight: 500,
                         color: '#FFFFFF',
                         display: 'block',
-                        lineHeight: '1.6',
+                        lineHeight: '1.8',
                         textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -170,9 +170,9 @@ export default function Gallery() {
               </motion.div>
             ))}
           </div>
-          
+
           {/* Grid layout for desktop */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-14">
             {galleryItems.map((item: GalleryItem, index: number) => (
               <motion.div
                 key={index}
@@ -207,7 +207,7 @@ export default function Gallery() {
                       sizes="(max-width: 768px) 250px, 300px"
                     />
                   </div>
-                  
+
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileHover={{ opacity: 0.1 }}
@@ -229,7 +229,7 @@ export default function Gallery() {
                         fontWeight: 700,
                         color: '#FFFFFF',
                         display: 'block',
-                        marginBottom: '12px',
+                        marginBottom: '20px',
                         textShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -241,7 +241,7 @@ export default function Gallery() {
                         fontWeight: 500,
                         color: '#FFFFFF',
                         display: 'block',
-                        lineHeight: '1.6',
+                        lineHeight: '1.8',
                         textShadow: '0 1px 4px rgba(0, 0, 0, 0.3)',
                       }}
                     >
@@ -256,7 +256,7 @@ export default function Gallery() {
 
         {/* Additional couple-focused content section */}
         <motion.div
-          className="mt-20 sm:mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="mt-section grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
