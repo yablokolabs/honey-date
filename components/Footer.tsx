@@ -220,7 +220,7 @@ export default function Footer() {
               letterSpacing: '0.3px',
             }}
           >
-            © 2025 HoneyDate.club — Where Love Meets Over Coffee & Cocktails
+            © 2025-2026 HoneyDate.club — Where Love Meets Over Coffee & Cocktails
           </Text>
         </motion.div>
       </div>
